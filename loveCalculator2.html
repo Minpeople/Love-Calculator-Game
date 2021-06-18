@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Love calculator </title>
+
+    <style>
+      html {
+        font-family: sans-serif;
+        background-color: #ffdcdc;
+      }
+
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 0 auto;
+      }
+
+      .lastResult {
+        color: #ffb4b4;
+        padding: 3px;
+      }
+      .header {
+        background-color: #ff9292;
+      }
+      .h1 {
+        background-color: #ffb4b4;
+      }
+    </style>
+      
+  </head>
+
+  <body>
+    <h1>Love calculator game </h1>
+    
+    <p>Write there your name and your crush name!</p>
+    <p>You will see the magic!</p>
+
+    <form>
+                    
+      <input id="myName" type="text" required  placeholder="Your name">
+      <input id="crushName" type="text" required  placeholder="Your crush name">
+      
+      <input type="submit">
+    </form>
+    <h1 id="guesses"></h1>
+
+    <script>
+      var form = document.querySelector('form');
+
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault()
+      let yourName = document.getElementById("myName").value;
+      let crushName = document.getElementById("crushName").value;
+
+      let loveScore = [Math.floor(Math.random()*100 + 1)];
+      notifyUser(loveScore)
+    })
+    function notifyUser(loveScore) {
+      const guesses = document.getElementById("guesses");
+      const perfectCouple = ["Paulina", "Rafał","Maciek", "Karolina"]
+        if (myName.value === "Karolina" &&  crushName.value === "Maciek" || myName.value === "Paulinka" &&  crushName.value === "rafał" || myName.value === "Paulina" &&  crushName.value === "Rafał" ||myName.value === "Rafał" && crushName.value === "Paulina") {
+          guesses.textContent = "Your love is 100 %! Kiedy wesele?";
+          } else {
+            guesses.textContent = "your love is " + loveScore + " %!";
+          } }
+    </script>
+  </body>
+</html>
